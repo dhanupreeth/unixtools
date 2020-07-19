@@ -14,3 +14,11 @@ hostname                # System Host Name
 hostname -i             # To Display to the ip address of the Host, Linux based distribution
 man hier                # File system hierarchy Description
 last reboot             # to know the system reboot history
+```
+## Hardware informations
+### Kernel Detected HW
+``` bash
+dmesg                   # Detect Hardware and Boot messages
+lsdev                   # Info about the installed Hardware like PCI Card
+dd if=/dev/mem bs=1k skip=768 count=256 2>/dev/null | strings -n 8  # Read BIOS
+```
