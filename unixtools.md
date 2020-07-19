@@ -48,4 +48,20 @@ pciconf -l -cv                  # PCI Device info
 usbdevs -v                      # USB Device info
 atacontrol list                 # ATA Device info
 camcontrol devlist -v           # SCSI Device info 
-````
+```
+### Load, Statistics and Messages
+Folowing Commands are useful to find out what is going on the system realtime. 
+``` bash
+top                             # display & update the top CPU processes             
+mpstat 1                        # display processors related statistics
+vmstat 2                        # virtual memory statistics
+iostat 2                        # I/O statistics - 2sec intervals
+systat -vmstat 1                # system statistics - 1sec intervals
+systat -tcp 1                   # tcp connections (try also -ip)
+systat -netstat 1               # active network connections - BSD
+systat -ifstat 1                # network traffic through active interfaces - BSD
+systat -iostat 1                # CPU and Disk throughput - BSD
+ipcs -a                         # info on system V interprocess 
+tail -n 500 /var/log/messages   # Last 500 Kernel/syslog messages
+tail /var/log/warn              # System Warnings messages see syslog.conf
+```
