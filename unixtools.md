@@ -35,4 +35,17 @@ lsusb -tv                        # USB Device info
 lshal                            # List all devices with properties
 dmidecode                        # DMI/SMBIOS: hw info from the BIOS
 ```
-
+### Free BSD
+``` bash
+sysctl hw.model                 # CPU Model
+sysctl hw                       # More information about hardware
+sysctl hw.ncpu                  # No. of active CPU's Installed
+sysctl vm                       # Memory Usage
+sysctl hw.realmem               # Hardware Memory (Physical)
+sysctl -a | grep mem            # Kernel memory settings and info
+sysctl dev                      # Configured devices
+pciconf -l -cv                  # PCI Device info
+usbdevs -v                      # USB Device info
+atacontrol list                 # ATA Device info
+camcontrol devlist -v           # SCSI Device info 
+````
