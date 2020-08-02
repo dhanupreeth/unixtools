@@ -65,3 +65,27 @@ ipcs -a                         # info on system V interprocess
 tail -n 500 /var/log/messages   # Last 500 Kernel/syslog messages
 tail /var/log/warn              # System Warnings messages see syslog.conf
 ```
+### Users
+```bash
+id                                                  # To display the active user ID with login & group
+last                                                # To know the last logins on the server
+who or w                                            # Who is logged on the server currently in simple type "w"
+groupadd admin                                      # Adding group "admin"
+useradd -c "Dhanesh Kumar" -g admin -m colin        # Creating user "Dhanesh Kumar", with "admin" group
+usermod -a -G <group> <user>                        # Adding existing user to the group - Debian Based
+groupmod -A <user> <group>                          # Adding existing user to the group - Suse Linux
+userdel dhanesh                                     # delete the user "dhanesh" (linux / Solaris)                                   
+adduser joe
+rmuser joe
+pw groupadd admin
+pw groupmod admin -m newmember
+pw useradd colin -c "Colin Barschel" -g admin -m -s /bin/tcsh
+pw userdel colin; pw groupdel admin
+````
+/etc/shadow - Encrypted passwords are stored 
+
+Temporarily prevent system logings for all user except ROOT user, with nologin. 
+``` bash
+# echo "Apologies no login now" > /etc/nologin     #(linux)
+# echo "Apologies no login now" > /var/run/nologin #(FreeBSD)
+```
