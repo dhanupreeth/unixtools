@@ -75,17 +75,23 @@ useradd -c "Dhanesh Kumar" -g admin -m colin        # Creating user "Dhanesh Kum
 usermod -a -G <group> <user>                        # Adding existing user to the group - Debian Based
 groupmod -A <user> <group>                          # Adding existing user to the group - Suse Linux
 userdel dhanesh                                     # delete the user "dhanesh" (linux / Solaris)                                   
-adduser joe
-rmuser joe
-pw groupadd admin
-pw groupmod admin -m newmember
-pw useradd colin -c "Colin Barschel" -g admin -m -s /bin/tcsh
-pw userdel colin; pw groupdel admin
-````
+adduser dhanesh                                     # FreeBSD add user joe (interactive)
+rmuser dhanesh                                      # FreeBSD delete user joe (interactive)
+pw groupadd admin                                   # Use pw on FreeBSD
+pw groupmod admin -m newmember                      # Add a new member to a group
+pw useradd dhanesh -c "Dhanesh Kumar" -g admin -m -s /bin/tcsh
+pw userdel dhanesh; pw groupdel admin
+```
 /etc/shadow - Encrypted passwords are stored 
 
 Temporarily prevent system logings for all user except ROOT user, with nologin. 
-``` bash
-# echo "Apologies no login now" > /etc/nologin     #(linux)
-# echo "Apologies no login now" > /var/run/nologin #(FreeBSD)
+```bash
+echo "Apologies no login now" > /etc/nologin     #(linux)
+echo "Apologies no login now" > /var/run/nologin #(FreeBSD)
 ```
+### Limits in Linux
+Some application requires higer limits on open files and sockets (like a proxy web server, database). The default limits are usually too low. 
+
+Shell/Script
+
+
